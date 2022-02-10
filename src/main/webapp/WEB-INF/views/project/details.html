@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragment.html :: head('Home')"></head>
+<body>
+<section th:include="fragment.html :: navbar"></section>
+<section class="container">
+    <h1>Project</h1>
+    <h2 th:text="${project.id}"></h2>
+    <h2 th:text="${project.name}"></h2>
+    <h2 th:text="${project.createdAt}"></h2>
+</section>
+</body>
+</html>

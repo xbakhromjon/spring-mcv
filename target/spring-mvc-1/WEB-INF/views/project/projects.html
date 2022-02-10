@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:include="fragment.html :: head('Project List')">
+</head>
+<body>
+<section th:include="fragment.html :: navbar">
+
+
+</section>
+
+<section>
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="project, iter : ${projects}">
+                <td th:text="${iter.count}"></td>
+                <td th:text="${project.name}"></td>
+                <td>
+                    <a th:href="@{/project/details/{id}(id=${project.id})}" class="btn btn-primary">Details</a> ||
+                    <a th:href="@{/project/delete/{id}(id=${project.id})}" class="btn btn-danger">Delete</a> ||
+                    <a th:href="@{/project/update/{id}(id=${project.id})}" class="btn btn-secondary">Update</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        <a href="/project/create">
+            <button type="button" class="btn btn-outline-primary">Create Project</button>
+        </a>
+    </div>
+</section>
+</body>
+</html>

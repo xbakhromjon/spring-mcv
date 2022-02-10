@@ -1,10 +1,10 @@
 package uz.elmurodov.controllers;
 
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import uz.elmurodov.annotations.MvcController;
 
-@MvcController
+@Controller
 @RequestMapping
 public class HomeController {
 
@@ -13,4 +13,8 @@ public class HomeController {
         return "home";
     }
 
+    @RequestMapping("/main")
+    private String mainPage() {
+        return "main";
+    }
 }
